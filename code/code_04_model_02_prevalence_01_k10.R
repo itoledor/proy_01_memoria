@@ -11,7 +11,7 @@ text_data  <- read_rds(here("data","text_data.rds"))
 # Model -------------------------------------------------------------------
 
 k <- 10
-punctuation <- c("-","-","-","!","¡","¿","?","´")#,"'","'",""",""","«",".")
+punctuation <- c("-","-","-","!","¡","¿","?","´","'","'",""",""","«",".")
 
 text_data               <- text_data %>% mutate(text_raw = text_raw %>% stringi::stri_trans_nfc())
 text_out                <- textProcessor(text_data$text_raw, metadata = text_data, language = "es", custompunctuation = punctuation)
